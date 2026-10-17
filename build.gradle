@@ -47,6 +47,7 @@ java {
 }
 
 jar {
+    archiveBaseName = 'pulse-visuals'
     manifest {
         attributes 'Implementation-Title': 'Pulse Visuals'
     }
