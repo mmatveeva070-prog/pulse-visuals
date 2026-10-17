@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "pulse",
+  "version": "${version}",
+  "name": "Pulse Visuals",
+  "description": "Client-side visual mod: player cosmetics (hats, capes, wings, pets, bodywear) and atmospheric screen post-processing.",
+  "authors": [
+    "Pulse"
+  ],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/pulse/icon.png",
+  "environment": "client",
+  "entrypoints": {
+    "main": [
+      "ru.pulse.Pulse"
+    ],
+    "client": [
+      "ru.pulse.PulseClient"
+    ],
+    "modmenu": [
+      "ru.pulse.gui.ModMenuScreens"
+    ]
+  },
+  "mixins": [
+    "pulse.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.20.0",
+    "fabric-api": "*",
+    "minecraft": "~1.21.11",
+    "java": ">=21"
+  },
+  "suggests": {
+    "modmenu": ">=17.0.0"
+  }
+}

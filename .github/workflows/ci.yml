@@ -1,0 +1,25 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: Build Fabric mod (1.21.11)
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 25
+      - name: Gradle build
+        run: ./gradlew build --no-daemon
+      - uses: actions/upload-artifact@v4
+        with:
+          name: pulse-visuals-mod
+          path: build/libs/*.jar
+          if-no-files-found: error
